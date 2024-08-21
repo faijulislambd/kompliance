@@ -1,6 +1,7 @@
 import Blob from "./components/Blob/blob";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
+import PayHR from "./components/PayHR/PayHR";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
         <Header></Header>
         <Blob></Blob>
         <Hero></Hero>
+        <PayHR></PayHR>
       </div>
     </>
   );

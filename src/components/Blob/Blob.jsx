@@ -1,4 +1,4 @@
-import "./blob.css";
+import "./Blob.css";
 import gradient1 from "./../../assets/gradient-general.png";
 import gradient2 from "./../../assets/gradient-blue.png";
 import gradient3 from "./../../assets/gradient-orange.png";
