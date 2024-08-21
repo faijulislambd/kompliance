@@ -1,4 +1,7 @@
 import "./blob.css";
+import gradient1 from "./../../assets/gradient-general.png";
+import gradient2 from "./../../assets/gradient-blue.png";
+import gradient3 from "./../../assets/gradient-orange.png";
 
 const Blob = () => {
   return (
@@ -8,17 +11,17 @@ const Blob = () => {
           <img
             className="gradient-blob__image gradient-blob__image--default "
             alt=""
-            src="https://komplice.com/wp-content/themes/fatfish/img/gradient-general.png"
+            src={gradient1}
           />
           <img
             className="gradient-blob__image gradient-blob__image--blue "
             alt=""
-            src="https://komplice.com/wp-content/themes/fatfish/img/gradient-blue.png"
+            src={gradient2}
           />
           <img
             className="gradient-blob__image gradient-blob__image--orange "
             alt=""
-            src="https://komplice.com/wp-content/themes/fatfish/img/gradient-orange.png"
+            src={gradient3}
           />
         </div>
       </div>
