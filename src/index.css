@@ -17,12 +17,13 @@
   --grid-cols: 12;
   --grid-gutter: 1.35rem;
   --grid-margin: 4rem;
+  --base-px: 16;
 }
 
 /* Font Family */
 
 @font-face {
-  font-family: "Moderat Extended";
+  font-family: "Moderat Extended Black";
   src: url(./assets/fonts/Moderat-Extended-Black.woff2) format("woff2");
   font-weight: 900;
   font-style: normal;
@@ -47,7 +48,7 @@
 
 @font-face {
   font-family: "Moderat Extended";
-  src: url(./assets) format("woff2");
+  src: url(./assets/fonts/Moderat-Regular.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -83,6 +84,13 @@
   font-weight: 300;
   font-style: normal;
   font-display: swap;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: FFIcons;
+  src: url(./assets/fonts/FFIcons.woff2?v=3372) format("woff2"),
+    url(./assets/fonts/FFIcons.woff?v=3372) format("woff");
 }
 
 * {
@@ -156,4 +164,121 @@
     to(rgba(0, 0, 0, 0))
   );
   -webkit-mask: linear-gradient(180deg, #000 55%, rgba(0, 0, 0, 0) 100%);
+}
+
+.primary-button {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: Moderat;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1em;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 1.3em;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+}
+
+.primary-button span {
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
+    -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  display: inline-block;
+  pointer-events: none;
+  font-size: 100%;
+}
+
+.primary-button:before {
+  display: inline-block;
+  font-family: FFIcons;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: none;
+  content: "\e003";
+  position: absolute;
+  left: 0.91em;
+  vertical-align: middle;
+  font-size: 1.4em;
+  -webkit-transform: translateX(-2em);
+  -ms-transform: translateX(-2em);
+  transform: translateX(-2em);
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
+    -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  will-change: transform;
+}
+
+.primary-button:after {
+  display: inline-block;
+  font-family: FFIcons;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: none;
+  content: "\e003";
+  vertical-align: middle;
+  margin-left: 0.5em;
+  font-size: 1.4em;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
+    -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.primary-button:hover span {
+  transform: translateX(2em);
+  -webkit-transform: translateX(2em);
+  -moz-transform: translateX(2em);
+  -ms-transform: translateX(2em);
+  -o-transform: translateX(2em);
+}
+.primary-button:hover:before {
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+}
+.primary-button:hover:after {
+  transform: translateX(2em);
+  -webkit-transform: translateX(2em);
+  -moz-transform: translateX(2em);
+  -ms-transform: translateX(2em);
+  -o-transform: translateX(2em);
+}
+
+.hero-main-title {
+  font-size: calc(120 / var(--base-px) * 1rem);
+  font-family: "Moderat Extended";
+  font-weight: 900;
+  line-height: 1em;
 }
