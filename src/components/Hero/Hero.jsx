@@ -5,6 +5,7 @@ const Hero = () => {
   return (
     <section className="relative pt-60 pb-32 content-wrapper">
       {/*Background Image*/}
+
       <div className="flex">
         <div className="w-1/2">
           {/* Head 1 */}
