@@ -1,3 +1,5 @@
+import "./Button.css";
+
 const Button = ({ bg = "bg-primary-color", text, className }) => {
   return (
     <button className={`${bg} primary-button ${className}`}>

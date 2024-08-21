@@ -4,12 +4,15 @@ import Hero from "./components/Hero/Hero";
 
 const App = () => {
   return (
-    <div className="home">
+    <>
       <div className="page-bg"></div>
-      <Header></Header>
-      <Blob></Blob>
-      <Hero></Hero>
-    </div>
+
+      <div className="home relative">
+        <Header></Header>
+        <Blob></Blob>
+        <Hero></Hero>
+      </div>
+    </>
   );
 };
 

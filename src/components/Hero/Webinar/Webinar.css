@@ -1,0 +1,22 @@
+.webinar-content {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  grid-row: 1;
+  grid-column: 1 / 1;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  width: calc(
+    var(--grid-gutter) * -1 + (var(--grid-gutter) + var(--grid-col-width)) * 4
+  );
+  margin-left: auto;
+  margin-right: calc(var(--grid-margin) + var(--grid-gutter));
+}
