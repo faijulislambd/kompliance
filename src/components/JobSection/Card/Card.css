@@ -1,0 +1,33 @@
+.card {
+  width: calc(
+    var(--grid-gutter) * -1 + (var(--grid-gutter) + var(--grid-col-width)) * 4
+  );
+  padding: 2rem;
+  background-color: #393856;
+  color: #ffffff;
+  box-shadow: var(--box-shadow);
+}
+
+.card h3 {
+  font-size: calc(40 / var(--base-px) * 1rem);
+  font-family: "Moderat Extended";
+  font-weight: 500;
+  line-height: 1em;
+  margin-bottom: 2rem;
+}
+
+.card-info > div {
+  margin-right: 0.5rem;
+  display: flex;
+  font-size: 1.1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  padding: 0.6rem 1.2rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 0.5rem;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}

@@ -1,0 +1,12 @@
+.job-section {
+  width: calc(
+    var(--grid-gutter) * -1 + (var(--grid-gutter) + var(--grid-col-width)) * 9
+  );
+  margin-top: var(--dynamic-header-height);
+}
+
+.job-section p {
+  width: calc(
+    var(--grid-gutter) * -1 + (var(--grid-gutter) + var(--grid-col-width)) * 6
+  );
+}

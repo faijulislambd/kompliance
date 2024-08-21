@@ -1,0 +1,43 @@
+.sub-title {
+  position: relative;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: calc(28 / var(--base-px) * 1rem) !important;
+  margin-bottom: 1rem;
+}
+
+.sub-title::after {
+  content: "";
+  background-image: url("./../../assets/square-round-logo.png");
+  width: 1.8em;
+  display: inline-block;
+  height: 1em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  vertical-align: middle;
+  margin-left: 0.5em;
+}
+
+.section-title {
+  font-size: calc(100 / var(--base-px) * 1rem);
+  font-family: "Moderat Extended";
+  font-weight: 700;
+  line-height: 1em;
+  color: #fff;
+}
+
+.section-title span {
+  z-index: 1;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#ff4925),
+    to(#ff4925)
+  );
+  background-image: -o-linear-gradient(#ff4925, #ff4925);
+  background-image: linear-gradient(#ff4925, #ff4925);
+  background-position: 0 80%;
+  background-repeat: no-repeat;
+  background-size: var(--highlight-line-scalex, 100%) 65%;
+}
