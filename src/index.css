@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Variables */
+
 :root {
   --header-v-padding: 2rem;
   --header-h-padding: 4rem;
@@ -16,6 +18,8 @@
   --grid-gutter: 1.35rem;
   --grid-margin: 4rem;
 }
+
+/* Font Family */
 
 @font-face {
   font-family: "Moderat Extended";
@@ -129,4 +133,27 @@
   );
   margin-left: auto;
   margin-right: auto;
+}
+
+.header-blur-bg:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: -1rem;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  -webkit-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  -webkit-mask: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(55%, #000),
+    to(rgba(0, 0, 0, 0))
+  );
+  -webkit-mask: linear-gradient(180deg, #000 55%, rgba(0, 0, 0, 0) 100%);
 }
