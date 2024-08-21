@@ -5,7 +5,7 @@ const Hero = () => {
     <section className="relative pt-60 pb-32 content-wrapper">
       {/*Background Image*/}
       <img
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full h-full object-cover -z-[1]"
         src={gradientBG}
       />
       <div className="flex">
