@@ -1,0 +1,13 @@
+.client-wrap {
+  position: sticky;
+  top: 0;
+  width: calc(
+    var(--grid-gutter) * -1 + (var(--grid-gutter) + var(--grid-col-width)) * 6
+  );
+}
+
+.client-height {
+  height: calc(
+    (var(--dynamic-viewport-height) - var(--wp-admin-bar-height)) * 3
+  );
+}

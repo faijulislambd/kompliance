@@ -1,12 +1,14 @@
 import Button from "../../../utils/Button/Button";
 import "./Card.css";
 
-const Card = ({ className }) => {
+const Card = ({ className, badge }) => {
   return (
     <div className={`card ${className}`}>
-      <p className="uppercase bg-sky-600 p-[0.7rem] text-white inline-block mb-8">
-        In-House
-      </p>
+      {badge && (
+        <p className="uppercase bg-sky-600 p-[0.7rem] text-white inline-block mb-8">
+          {badge}
+        </p>
+      )}
       <div className="opacity-20">#1101</div>
       <h3>HRIS Advison at Komplice</h3>
       <div className="card-info">

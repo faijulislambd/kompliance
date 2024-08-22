@@ -1,0 +1,46 @@
+.client-card {
+  background-color: #393856;
+  width: calc(
+    (var(--grid-gutter) * -1 + (var(--grid-gutter) + var(--grid-col-width)) * 5) /
+      2
+  );
+  margin: var(--grid-gutter) 0;
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+  -webkit-transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    -webkit-clip-path 0.6s cubic-bezier(0.52, 0, 0.2, 1);
+  transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    -webkit-clip-path 0.6s cubic-bezier(0.52, 0, 0.2, 1);
+  -o-transition: clip-path 0.6s cubic-bezier(0.52, 0, 0.2, 1),
+    background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: clip-path 0.6s cubic-bezier(0.52, 0, 0.2, 1),
+    background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: clip-path 0.6s cubic-bezier(0.52, 0, 0.2, 1),
+    background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    -webkit-clip-path 0.6s cubic-bezier(0.52, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.client-card img {
+  filter: brightness(0) invert(1);
+  mix-blend-mode: screen;
+  width: 300px;
+  height: 300px;
+  aspect-ratio: 350/350;
+}
+.client-card > a {
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  -o-transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    -webkit-transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  width: 100%;
+}

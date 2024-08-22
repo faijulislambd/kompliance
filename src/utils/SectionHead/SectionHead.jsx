@@ -1,12 +1,10 @@
 import "./SectionHead.css";
 
-const SectionHead = () => {
+const SectionHead = ({ subTitle, title }) => {
   return (
     <div>
-      <p className="sub-title">Current job openings</p>
-      <h2 className="section-title">
-        Several <span>opportunities</span> are waiting for you
-      </h2>
+      <p className="sub-title">{subTitle}</p>
+      <h2 className="section-title">{title}</h2>
     </div>
   );
 };
