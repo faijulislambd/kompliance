@@ -50,7 +50,7 @@ const JobSection = () => {
 
   return (
     <section>
-      <div className="content-wrapper  py-40">
+      <div className="content-wrapper job-mt py-40">
         <div className="flex flex-wrap " ref={cardContainer}>
           <div className="job-section" ref={jobSectionRef}>
             <div>

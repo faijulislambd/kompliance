@@ -12,6 +12,7 @@ const PayHR = () => {
   const arrowBall = useRef(null);
   const cursorLeftContainer = useRef(null);
   const cursorRightContainer = useRef(null);
+  const NoCursor = useRef(null);
 
   useEffect(() => {
     const elementLeft = leftCircle.current;
@@ -20,6 +21,7 @@ const PayHR = () => {
     const arrow = arrowBall.current;
     const leftContainer = cursorLeftContainer.current;
     const rightContainer = cursorRightContainer.current;
+    const noCursor = NoCursor.current;
 
     const handleMouseMove = (event) => {
       const { clientX, clientY } = event;
@@ -27,14 +29,29 @@ const PayHR = () => {
       // Calculate the position relative to the container's boundaries
       let x = clientX - 100 / 2;
       let y = clientY - 100 / 2;
-
-      gsap.to(arrow, {
-        opacity: 1,
-        x: x,
-        y: y,
-        duration: 0.1, // Shorter duration for a more responsive feel
-        ease: "power2.out",
-      });
+      // Get the boundaries of the "NoCursor" element
+      const noCursorRect = noCursor.getBoundingClientRect();
+      if (
+        clientX >= noCursorRect.left &&
+        clientX <= noCursorRect.right &&
+        clientY >= noCursorRect.top &&
+        clientY <= noCursorRect.bottom
+      ) {
+        // Hide the arrow
+        gsap.to(arrow, {
+          opacity: 0,
+          duration: 0.1,
+          ease: "power2.out",
+        });
+      } else {
+        gsap.to(arrow, {
+          opacity: 1,
+          x: x,
+          y: y,
+          duration: 0.1, // Shorter duration for a more responsive feel
+          ease: "power2.out",
+        });
+      }
     };
 
     const handleMouseEnter = () => {
@@ -205,7 +222,10 @@ const PayHR = () => {
               <h4 className="text-6xl">Expertise</h4>
             </div>
           </a>
-          <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[18] text-white text-[6rem] opacity-30">
+          <div
+            className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[18] text-white text-[3rem] opacity-30"
+            ref={NoCursor}
+          >
             and
           </div>
           <a
