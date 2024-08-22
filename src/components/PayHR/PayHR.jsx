@@ -15,7 +15,7 @@ const PayHR = () => {
 
   useEffect(() => {
     const elementLeft = leftCircle.current;
-    const elementRight = leftCircle.current;
+    const elementRight = rightCircle.current;
     const container = cursorContainer.current;
     const arrow = arrowBall.current;
     const leftContainer = cursorLeftContainer.current;
@@ -205,7 +205,7 @@ const PayHR = () => {
               <h4 className="text-6xl">Expertise</h4>
             </div>
           </a>
-          <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[18] text-white font-[6rem] opacity-30">
+          <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[18] text-white text-[6rem] opacity-30">
             and
           </div>
           <a
@@ -213,7 +213,7 @@ const PayHR = () => {
             className="py-[18rem] -my-[18rem] w-1/2 flex flex-col items-center"
             ref={cursorRightContainer}
           >
-            <div ref={rightCircle} className="fixed left-0 right-0">
+            <div ref={rightCircle} className="fixed top-0 left-0">
               <CursorGradient src={blue} />
             </div>
             <div>

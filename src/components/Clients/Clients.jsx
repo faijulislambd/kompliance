@@ -37,21 +37,35 @@ const Clients = () => {
       end: "bottom top",
       pin: true,
       scrub: 1,
+      markers: false, // Set to false or remove in production
       onUpdate: (self) => {
         const progress = self.progress;
-        controls1.start({ y: `${100 * progress}%` });
-        controls2.start({ y: `${-100 * progress}%` });
+
+        // Smooth scrolling effect for columns
+        controls1.start({
+          y: `${progress * 100}vh`,
+          //   opacity: 1 - progress,
+        });
+        controls2.start({
+          y: `${-progress * 100}vh`,
+          //   opacity: progress,
+        });
       },
-      markers: true, // Optional: remove or set to false in production
+      //   onLeave: () => {
+      //     // Fade out columns when the section is out of view
+      //     controls1.start({ opacity: 0 });
+      //     controls2.start({ opacity: 0 });
+      //   },
     });
 
     return () => {
       scrollTrigger.kill();
     };
   }, [controls1, controls2]);
+
   return (
     <section
-      className="content-wrapper flex justify-end py-40 client-heigh relative"
+      className="content-wrapper flex justify-end py-40 client-heigh relative overflow-hidden"
       ref={sectionRef}
     >
       <div className="flex justify-end relative items-center">
