@@ -265,7 +265,7 @@ html:not(.has-limited-animations)
 }
 
 .footer .gradient-blob {
-  left: calc(var(--grid-margin) * -1);
+  left: 0;
   bottom: 0;
   height: 200vw;
   z-index: -1;

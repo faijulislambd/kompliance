@@ -11,3 +11,65 @@
     (var(--dynamic-viewport-height) - var(--wp-admin-bar-height)) * 3
   );
 }
+
+.clients__intro--columns-shown .clients__logo-column-inner-1 {
+  -webkit-transition: opacity 0.2s cubic-bezier(0.47, 0, 0.745, 0.715),
+    -webkit-transform 2.2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 0.2s cubic-bezier(0.47, 0, 0.745, 0.715),
+    -webkit-transform 2.2s cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: transform 2.2s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: transform 2.2s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: transform 2.2s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 0.2s cubic-bezier(0.47, 0, 0.745, 0.715),
+    -webkit-transform 2.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.clients-card-scroll > a {
+  -webkit-transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  -o-transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.has-limited-animations .clients__logo-column-inner-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.clients__logo-column-inner-1 {
+  height: 100%;
+  -webkit-transition: opacity 0.2s cubic-bezier(0.47, 0, 0.745, 0.715),
+    -webkit-transform 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: opacity 0.2s cubic-bezier(0.47, 0, 0.745, 0.715),
+    -webkit-transform 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -o-transition: transform 0.5s cubic-bezier(0.47, 0, 0.745, 0.715),
+    opacity 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: transform 0.5s cubic-bezier(0.47, 0, 0.745, 0.715),
+    opacity 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: transform 0.5s cubic-bezier(0.47, 0, 0.745, 0.715),
+    opacity 0.2s cubic-bezier(0.47, 0, 0.745, 0.715),
+    -webkit-transform 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+.has-limited-animations .clients__intro {
+  overflow: hidden;
+}
+.clients__logo-container {
+  position: sticky;
+  left: var(--grid-margin);
+  top: var(--wp-admin-bar-height);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  height: calc(var(--dynamic-viewport-height) - var(--wp-admin-bar-height));
+  margin: calc(
+      (var(--dynamic-viewport-height) - var(--wp-admin-bar-height)) * -2
+    )
+    0;
+  z-index: 1;
+}

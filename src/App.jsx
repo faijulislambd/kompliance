@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Blob from "./components/Blob/blob";
 import Clients from "./components/Clients/Clients";
 import Footer from "./components/Footer/Footer";
@@ -8,6 +9,9 @@ import PayHR from "./components/PayHR/PayHR";
 import SubmissionSection from "./components/SubmissionSection/SubmissionSection";
 
 const App = () => {
+  // Create refs for JobSection and SubmissionSection
+  const jobSectionRef = useRef(null);
+  const submissionSectionRef = useRef(null);
   return (
     <>
       <div className="page-bg"></div>
@@ -17,9 +21,12 @@ const App = () => {
         <Blob></Blob>
         <Hero></Hero>
         <PayHR></PayHR>
-        <JobSection></JobSection>
-        <Clients></Clients>
-        <SubmissionSection></SubmissionSection>
+        <JobSection ref={jobSectionRef}></JobSection>
+        <Clients
+          prevSection={jobSectionRef}
+          nextSection={submissionSectionRef}
+        ></Clients>
+        <SubmissionSection ref={submissionSectionRef}></SubmissionSection>
       </div>
       <Footer></Footer>
     </>

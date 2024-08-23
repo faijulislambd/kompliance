@@ -1,0 +1,19 @@
+.newsletter-width {
+  width: calc(
+    var(--grid-gutter) * -1 + (var(--grid-gutter) + var(--grid-col-width)) * 6
+  );
+}
+
+.newsletter-width h5 {
+  font-size: calc(40 / var(--base-px) * 1rem);
+  font-family: "Moderat Extended";
+  font-weight: 500;
+  line-height: 1em;
+  color: #fff;
+}
+
+.input-width {
+  width: calc(
+    var(--grid-gutter) * -1 + (var(--grid-gutter) + var(--grid-col-width)) * 3.8
+  );
+}

@@ -17,11 +17,13 @@
   --grid-cols: 12;
   --grid-gutter: 1.35rem;
   --grid-margin: 4rem;
-  --base-px: 16;
+  --base-px: 18;
   --dynamic-header-height: 154.06599999999997px;
   --highlight-line-scalex: 100%;
   --box-shadow: 0px 0px 8px 3px rgb(40 39 75 / 36%);
-  --dynamic-viewport-height: 580px;
+  --dynamic-viewport-height: 663px;
+  --banner-trans: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  --wp-admin-bar-height: 0px !important;
 }
 
 /* Font Family */

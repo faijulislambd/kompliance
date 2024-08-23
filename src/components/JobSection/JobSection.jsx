@@ -3,83 +3,116 @@ import Button from "../../utils/Button/Button";
 import SectionHead from "../../utils/SectionHead/SectionHead";
 import Card from "./Card/Card";
 import "./JobSection.css";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
+import useScrollSnap from "../../hooks/useScrollSnap";
 
 const JobSection = () => {
+  const scrollSnapRef = useScrollSnap();
   const cardContainer = useRef();
   const jobSectionRef = useRef();
   gsap.registerPlugin(ScrollTrigger);
 
-  useGSAP(() => {
-    const cards = gsap.utils.toArray(".cardStack").reverse();
+  useEffect(() => {
+    const handleResize = () => {
+      const isDesktop = window.innerWidth >= 1024;
+      const homeJobsElements = document.querySelectorAll(".home-jobs");
 
-    // Pin the container until the last card is in view
-    ScrollTrigger.create({
-      trigger: cardContainer.current,
-      start: "center center",
-      end: `+=${cards.length * 100}%`,
-      pin: cardContainer.current,
-      pinSpacing: true,
-      scrub: true,
-      markers: false,
-    });
+      homeJobsElements.forEach(() => {
+        const featuredSticky = document.querySelector(
+          ".home-jobs__featured-sticky"
+        );
+        const introductionSticky = document.querySelector(
+          ".home-jobs__introduction-sticky"
+        );
 
-    // Overlapping effect for each card
-    cards.forEach((card, i) => {
-      gsap.fromTo(
-        card,
-        { y: 150, autoAlpha: 0 },
-        {
-          y: 0,
-          scale: 1,
-          autoAlpha: 1,
-          ease: "power3.inOut",
-          scrollTrigger: {
-            trigger: card,
-            start: () => `top +=${i * 100}%`, // Stagger the start of each animation
-            end: () => `+=${(cards.length - 1) * 100}%`, // Adjust end based on remaining cards
-            scrub: true,
-            markers: false,
-          },
+        if (isDesktop) {
+          if (introductionSticky) {
+            featuredSticky.style.height = `${introductionSticky.clientHeight}px`;
+          }
+        } else {
+          featuredSticky.style.height = "";
         }
-      );
-    });
+      });
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    const ctx = gsap.context(() => {
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: jobSectionRef.current,
+          start: "top 30%",
+          end: "bottom bottom",
+          scrub: 5, // Slower scrub value for smoother animation
+        },
+      });
+
+      document.querySelectorAll(".cardStack").forEach((card, index) => {
+        timeline.fromTo(
+          card,
+          { y: "100vh" },
+          {
+            y: "0",
+            ease: "power3.inOut",
+            duration: 1.5, // Ensure this duration is applied
+          },
+          index * 0.4 // Adjust the overlap between cards
+        );
+      });
+    }, jobSectionRef);
+
+    return () => {
+      ctx.revert();
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
-    <section>
-      <div className="content-wrapper job-mt py-40">
-        <div className="flex flex-wrap " ref={cardContainer}>
-          <div className="job-section" ref={jobSectionRef}>
-            <div>
-              <SectionHead
-                subTitle="Current job openings"
-                title={
-                  <>
-                    Several <span>opportunities</span>
-                    <br /> are waiting for you
-                  </>
-                }
-              ></SectionHead>
-              <p className="mt-5 text-3xl text-white leading-10">
-                We support both organizations looking to fill a position within
-                their Payroll and HRIS team, and candidates looking for a new
-                professional challenge. So, whether you're just starting out or
-                have a successful career behind you, our job offers are just
-                waiting for your resume.
-              </p>
-              <div className="mt-5">
-                <Button text="View all offers"></Button>
+    <section className="home-jobs" ref={scrollSnapRef}>
+      <div className="job-min-height">
+        <div className="content-wrapper py-40">
+          <div className="flex flex-wrap items-center relative job-min-height">
+            <div
+              className="job-section home-jobs__introduction-sticky flex items-center"
+              data-scroll-snap="center"
+              ref={jobSectionRef}
+            >
+              <div className="job-mt">
+                <SectionHead
+                  subTitle="Current job openings"
+                  title={
+                    <>
+                      Several <span>opportunities</span>
+                      <br /> are waiting for you
+                    </>
+                  }
+                ></SectionHead>
+                <p className="mt-5 text-3xl text-white leading-10">
+                  We support both organizations looking to fill a position
+                  within their Payroll and HRIS team, and candidates looking for
+                  a new professional challenge. So, whether you're just starting
+                  out or have a successful career behind you, our job offers are
+                  just waiting for your resume.
+                </p>
+                <div className="mt-5">
+                  <Button text="View all offers"></Button>
+                </div>
+                <p className="mt-5">&nbsp;</p>
               </div>
-              <p className="mt-5">&nbsp;</p>
             </div>
-          </div>
-          <div className="cards-container">
-            <Card className="cardStack" badge="One Card"></Card>
-            <Card className="cardStack" badge="Two Card"></Card>
-            <Card className="cardStack" badge="Three Card"></Card>
+            <div className="cards-container">
+              <div
+                className="home-jobs__featured-sticky relative"
+                data-scroll-snap="center"
+              >
+                <Card className="cardStack" badge="One Card"></Card>
+                <Card className="cardStack" badge="Two Card"></Card>
+                <Card className="cardStack" badge="Three Card"></Card>
+              </div>
+            </div>
           </div>
         </div>
       </div>
