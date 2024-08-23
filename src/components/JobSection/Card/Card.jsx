@@ -1,9 +1,12 @@
 import Button from "../../../utils/Button/Button";
 import "./Card.css";
 
-const Card = ({ className, badge }) => {
+const Card = ({ className, badge, href = "#" }) => {
   return (
-    <div className={`card ${className}`}>
+    <a
+      className={`card ${className} transition-all hover:bg-[#3f3e5f] pointer-events-auto`}
+      href={href}
+    >
       {badge && (
         <p className="uppercase bg-sky-600 p-[0.7rem] text-white inline-block mb-8">
           {badge}
@@ -31,7 +34,7 @@ const Card = ({ className, badge }) => {
           <Button text="See Offer" className="text-black"></Button>
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 

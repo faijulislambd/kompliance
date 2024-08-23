@@ -21,6 +21,16 @@ const FooterBottom = () => {
           </a>
         </div>
       </div>
+      <div className="flex flex-col space-y-5 text-white text-right">
+        <a
+          href="#"
+          className="text-2xl underline transition-colors hover:text-[#a7e6d7]"
+        >
+          Privacy Policy
+        </a>
+        <p className="text-2xl">All rights reserved © 2023 Komplice</p>
+        <p className="text-2xl">Powered By</p>
+      </div>
     </div>
   );
 };

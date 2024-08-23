@@ -1,14 +1,15 @@
 import Button from "../../utils/Button/Button";
 import gradientBG from "./../../assets/gradientBG.png";
 import Webinar from "./Webinar/Webinar";
+import bg from "./../../assets/web.png";
 
 const Hero = () => {
   return (
     <section className="relative pb-32 content-wrapper">
       {/*Background Image*/}
 
-      <div className="flex items">
-        <div className="w-1/2 pt-60">
+      <div className="flex lg:flex-row flex-col items">
+        <div className="lg:w-1/2 w-full pt-60">
           {/* Head 1 */}
           <h1 className="hero-main-title text-white font-bold ">
             Dare.
@@ -28,7 +29,11 @@ const Hero = () => {
           {/** Button */}
           <Button text="Discover who we are" className="mt-8"></Button>
         </div>
-        <div className="w-1/2">
+        <div className="lg:w-1/2 w-full relative">
+          <img
+            src={bg}
+            className="absolute object-cover pointer-events-none -z-[1] h-full w-full opacity-45 rounded-xl overflow-hidden blur-[1.2px]"
+          />
           <Webinar></Webinar>
         </div>
       </div>

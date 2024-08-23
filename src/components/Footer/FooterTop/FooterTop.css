@@ -17,3 +17,7 @@
     var(--grid-gutter) * -1 + (var(--grid-gutter) + var(--grid-col-width)) * 3.8
   );
 }
+
+.logo-k img {
+  width: calc(var(--grid-gutter) * 1 + var(--grid-col-width) * 1.5);
+}

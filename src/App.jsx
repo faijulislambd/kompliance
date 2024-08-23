@@ -7,6 +7,7 @@ import Hero from "./components/Hero/Hero";
 import JobSection from "./components/JobSection/JobSection";
 import PayHR from "./components/PayHR/PayHR";
 import SubmissionSection from "./components/SubmissionSection/SubmissionSection";
+import PageLoadAnimation from "./components/PageLoadAnimation/PageLoadAnimation";
 
 const App = () => {
   // Create refs for JobSection and SubmissionSection

@@ -77,7 +77,7 @@ const JobSection = () => {
         <div className="content-wrapper py-40">
           <div className="flex flex-wrap justify-start relative">
             <div
-              className="job-section home-jobs__introduction-sticky flex items-center"
+              className="job-section home-jobs__introduction-sticky flex items-center pointer-events-none"
               data-scroll-snap="center"
               ref={jobSectionRef}
             >
@@ -103,7 +103,7 @@ const JobSection = () => {
             </div>
             <div className="cards-container">
               <div
-                className="home-jobs__featured-sticky relative"
+                className="home-jobs__featured-sticky relative pointer-events-none"
                 data-scroll-snap="center"
               >
                 <Card className="cardStack" badge="One Card"></Card>

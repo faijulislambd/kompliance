@@ -3,7 +3,7 @@ import "./Webinar.css";
 
 const Webinar = () => {
   return (
-    <div className="webinar-content">
+    <div className="webinar-content relative">
       <h6 className="text-white text-4xl">
         Interactive Webinar <br />
         "Let's talk Payroll"{" "}

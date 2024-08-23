@@ -161,3 +161,6 @@
   font-weight: 900;
   line-height: 1em;
 }
+
+@media screen and (max-width: 786px) {
+}

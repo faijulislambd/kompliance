@@ -6,6 +6,7 @@
   background-color: #393856;
   color: #ffffff;
   box-shadow: var(--box-shadow);
+  pointer-events: auto;
 }
 
 .card h3 {
