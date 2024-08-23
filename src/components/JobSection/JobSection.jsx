@@ -30,6 +30,7 @@ const JobSection = () => {
         if (isDesktop) {
           if (introductionSticky) {
             featuredSticky.style.height = `${introductionSticky.clientHeight}px`;
+            console.log(introductionSticky.clientHeight);
           }
         } else {
           featuredSticky.style.height = "";
@@ -46,7 +47,7 @@ const JobSection = () => {
           trigger: jobSectionRef.current,
           start: "top 30%",
           end: "bottom bottom",
-          scrub: 5, // Slower scrub value for smoother animation
+          scrub: 4, // Slower scrub value for smoother animation
         },
       });
 
@@ -57,9 +58,9 @@ const JobSection = () => {
           {
             y: "0",
             ease: "power3.inOut",
-            duration: 1.5, // Ensure this duration is applied
+            duration: 5, // Ensure this duration is applied
           },
-          index * 0.4 // Adjust the overlap between cards
+          index * 0.8 // Adjust the overlap between cards
         );
       });
     }, jobSectionRef);
@@ -74,7 +75,7 @@ const JobSection = () => {
     <section className="home-jobs" ref={scrollSnapRef}>
       <div className="job-min-height">
         <div className="content-wrapper py-40">
-          <div className="flex flex-wrap items-center relative job-min-height">
+          <div className="flex flex-wrap justify-start relative">
             <div
               className="job-section home-jobs__introduction-sticky flex items-center"
               data-scroll-snap="center"

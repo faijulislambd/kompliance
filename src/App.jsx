@@ -10,8 +10,8 @@ import SubmissionSection from "./components/SubmissionSection/SubmissionSection"
 
 const App = () => {
   // Create refs for JobSection and SubmissionSection
-  const jobSectionRef = useRef(null);
-  const submissionSectionRef = useRef(null);
+  // const jobSectionRef = useRef(null);
+  // const submissionSectionRef = useRef(null);
   return (
     <>
       <div className="page-bg"></div>
@@ -21,12 +21,14 @@ const App = () => {
         <Blob></Blob>
         <Hero></Hero>
         <PayHR></PayHR>
-        <JobSection ref={jobSectionRef}></JobSection>
-        <Clients
-          prevSection={jobSectionRef}
-          nextSection={submissionSectionRef}
-        ></Clients>
-        <SubmissionSection ref={submissionSectionRef}></SubmissionSection>
+        <JobSection></JobSection>
+        {
+          // <Clients
+          //   prevSection={jobSectionRef}
+          //   nextSection={submissionSectionRef}
+          // ></Clients>
+        }
+        <SubmissionSection></SubmissionSection>
       </div>
       <Footer></Footer>
     </>

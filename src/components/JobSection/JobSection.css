@@ -15,16 +15,13 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .job-section {
+  /* .job-min-height {
     min-height: calc(
       calc(var(--dynamic-viewport-height) - var(--wp-admin-bar-height)) * 2.75
     );
-  }
-
+  } */
   .job-min-height {
-    min-height: calc(
-      calc(var(--dynamic-viewport-height) - var(--wp-admin-bar-height)) * 2.75
-    );
+    min-height: 10rem;
   }
 
   .cards-container {

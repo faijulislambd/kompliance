@@ -44,7 +44,7 @@ const Clients = ({ prevSection, nextSection }) => {
         );
       }
 
-      console.log("Curren Next", nextSection.current);
+      console.log(nextSection);
 
       if (nextSection && nextSection.current instanceof HTMLElement) {
         paddingTop = parseFloat(
