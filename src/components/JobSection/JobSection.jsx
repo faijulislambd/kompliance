@@ -45,7 +45,7 @@ const JobSection = () => {
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: jobSectionRef.current,
-          start: "top 30%",
+          start: "top 40%",
           end: "bottom bottom",
           scrub: 4, // Slower scrub value for smoother animation
         },
@@ -60,7 +60,7 @@ const JobSection = () => {
             ease: "power3.inOut",
             duration: 5, // Ensure this duration is applied
           },
-          index * 0.8 // Adjust the overlap between cards
+          index * 0.4 // Adjust the overlap between cards
         );
       });
     }, jobSectionRef);
@@ -84,12 +84,9 @@ const JobSection = () => {
               <div className="job-mt">
                 <SectionHead
                   subTitle="Current job openings"
-                  title={
-                    <>
-                      Several <span>opportunities</span>
-                      <br /> are waiting for you
-                    </>
-                  }
+                  titleText="Several"
+                  highlightText="opportunities"
+                  afterHighlight="are waiting for you"
                 ></SectionHead>
                 <p className="mt-5 text-3xl text-white leading-10">
                   We support both organizations looking to fill a position
