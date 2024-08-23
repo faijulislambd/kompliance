@@ -11,8 +11,8 @@ import PageLoadAnimation from "./components/PageLoadAnimation/PageLoadAnimation"
 
 const App = () => {
   // Create refs for JobSection and SubmissionSection
-  // const jobSectionRef = useRef(null);
-  // const submissionSectionRef = useRef(null);
+  const jobSectionRef = useRef(null);
+  const submissionSectionRef = useRef(null);
   return (
     <>
       <div className="page-bg"></div>
@@ -24,10 +24,10 @@ const App = () => {
         <PayHR></PayHR>
         <JobSection></JobSection>
         {
-          // <Clients
-          //   prevSection={jobSectionRef}
-          //   nextSection={submissionSectionRef}
-          // ></Clients>
+          <Clients
+            prevSection={jobSectionRef}
+            nextSection={submissionSectionRef}
+          ></Clients>
         }
         <SubmissionSection></SubmissionSection>
       </div>

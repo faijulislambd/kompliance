@@ -27,7 +27,7 @@ const FooterTop = () => {
         </div>
       </div>
       <div className="flex logo-k items-center space-x-16">
-        <div className="flex flex-col space-y-3 text-white text-right">
+        <div className="flex flex-col space-y-3 text-white text-right items-end">
           <div>
             <a
               className="text-3xl transition-colors hover:text-[#a7e6d7]"

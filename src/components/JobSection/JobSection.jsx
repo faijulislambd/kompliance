@@ -58,7 +58,7 @@ const JobSection = () => {
           {
             y: "0",
             ease: "power3.inOut",
-            duration: 5, // Ensure this duration is applied
+            duration: 2, // Ensure this duration is applied
           },
           index * 0.4 // Adjust the overlap between cards
         );
@@ -103,7 +103,7 @@ const JobSection = () => {
             </div>
             <div className="cards-container">
               <div
-                className="home-jobs__featured-sticky relative pointer-events-none"
+                className="home-jobs__featured-sticky relative pointer-events-none flex flex-col flex-end"
                 data-scroll-snap="center"
               >
                 <Card className="cardStack" badge="One Card"></Card>
